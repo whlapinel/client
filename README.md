@@ -1,3 +1,9 @@
+The purpose of this was to see if I could put together the barebones of a local PostgreSQL database, a local express server, and a React frontend.  It works!  
+
+Issues: the data is pulled from the server regardless of any queries made by the client so that's probably the next step, to see if I can have the client make a query that gets a successful response from the server.
+
+I used resources from a couple different tutorials to set this up.  Primarily learning Postgres from Angela Yu's WebDev course.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

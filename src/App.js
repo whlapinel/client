@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+//App.js
 
-function App() {
-  return (
+import React, { useState } from "react";
+import "./App.css";
+
+
+export default function App() {
+  const [data, setData] = useState('');
+
+  // request data from web server
+  async function apiCall() {
+    const response = await fetch("http://localhost:8080");
+    const newData = await response.text();
+    console.log(data);
+    setData(newData);
+  }
+
+
+  
+
+    //data will be the string we send from our server
+
+
+
+    // async function apiCall() {
+    //   const data = await fetch("http://localhost:8080");
+    //   console.log(data);
+    //   setData(data);
+
+    // }
+  
+    return (
+
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{data}</h1>
+        <button onClick={apiCall}>Make API Call</button>
       </header>
     </div>
   );
 }
-
-export default App;
